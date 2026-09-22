@@ -1,0 +1,8 @@
+node_modules/
+_site/
+.DS_Store
+
+# Original photo files, kept out of the repository on purpose:
+# they show identifiable children and one carries GPS location data.
+# The photos actually used by the site live in src/images/.
+images/

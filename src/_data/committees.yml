@@ -1,0 +1,23 @@
+# ============================================================================
+# Committees on the Get Involved page, in the order shown.
+# To add one, copy a block. Leave "chair" blank if the seat is open.
+# ============================================================================
+
+# TODO: descriptions are drafts and chairs are placeholders until the board
+# confirms the current list.
+
+- name: Community Engagement
+  summary: Welcomes new neighbors, plans social gatherings, and spreads the word about meetings and events.
+  chair: ""
+
+- name: Land Use
+  summary: Reviews zoning and development proposals in the neighborhood and brings them to residents for input.
+  chair: ""
+
+- name: Neighborhood Clean-Up
+  summary: Organizes clean-up days and works with the city on litter, illegal dumping, and beautification.
+  chair: ""
+
+- name: Crime Watch
+  summary: Shares safety updates with neighbors and keeps the association connected with local police.
+  chair: ""

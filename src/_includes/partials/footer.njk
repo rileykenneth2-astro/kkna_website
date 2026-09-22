@@ -1,0 +1,33 @@
+{% from "partials/macros.njk" import ext %}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="/images/logo-mark-white.png" alt="" width="317" height="447">
+        <p><strong>{{ site.name }}</strong><br>{{ site.city }}</p>
+      </div>
+      <div>
+        <h2>Monthly meetings</h2>
+        <p>{{ site.meeting.schedule }}<br>{{ site.meeting.start | timeRange(site.meeting.end) }}</p>
+        <p>{{ site.meeting.place }}<br>{{ site.meeting.address }}</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ ext(site.facebook, "Facebook") }}</li>
+        </ul>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="{{ site.navButton.url }}">{{ site.navButton.label }}</a></li>
+          {%- for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__bottom">© <span data-year>{% year %}</span> {{ site.name }}</p>
+  </div>
+</footer>

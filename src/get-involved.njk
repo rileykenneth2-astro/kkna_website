@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+title: Get involved
+description: Come to a monthly meeting, join a committee, or volunteer at a Kennedy-King neighborhood event.
+heading: Get involved
+lead: The association is run entirely by neighbors who volunteer. Whether you have an hour a month or a weekend a year, there's a way to help.
+---
+{# TODO: copy on this page is a draft for the board to review. #}
+
+<nav class="jump-links container" aria-label="On this page">
+  <a href="#meetings">Meetings</a>
+  <a href="#committees">Committees</a>
+  <a href="#volunteer">Volunteer</a>
+  <a href="#sponsor">Sponsor</a>
+</nav>
+
+<section class="container meeting-wrap" id="meetings" aria-labelledby="meeting-title">
+  <p class="section-intro"><strong>The easiest way to start:</strong> come to a monthly meeting. You'll hear what's going on, meet the board, and find out where help is needed most.</p>
+  {% include "partials/meeting-card.njk" %}
+</section>
+
+<section class="section section--alt" id="committees" aria-labelledby="committees-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="committees-title">Join a committee</h2>
+        <p>Committees do most of the association's work between meetings. New members are welcome on all of them.</p>
+      </div>
+    </div>
+    {# Committees come from _data/committees.yml #}
+    <div class="card-grid card-grid--2">
+      {%- for c in committees %}
+      <article class="card">
+        <h3>{{ c.name }}</h3>
+        <p>{{ c.summary }}</p>
+        <p class="card__meta">Chair: {{ c.chair or "to be announced" }}</p>
+        <div class="card__actions">
+          <a class="btn btn--secondary btn--small" href="#contact-form" data-topic="{{ c.name }} committee">Join this committee</a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="volunteer" aria-labelledby="volunteer-title">
+  <div class="container split split--top">
+    <div>
+      <h2 id="volunteer-title">Help at events</h2>
+      <p>Our block parties, clean-up days, and neighborhood get-togethers happen because neighbors pitch in. Most jobs take a couple of hours, and no experience is needed.</p>
+      <ul class="checklist">
+        <li>Setting up and taking down tents, tables, and signs</li>
+        <li>Welcoming neighbors at the check-in table</li>
+        <li>Picking up litter on clean-up days</li>
+        <li>Spreading the word by handing out flyers on your block</li>
+      </ul>
+      <a class="btn btn--primary" href="#contact-form" data-topic="Volunteering at events">Sign up to volunteer</a>
+    </div>
+
+    <aside class="card card--tinted" id="sponsor" aria-labelledby="sponsor-title">
+      <h2 id="sponsor-title" class="card__title">Sponsor an event</h2>
+      <p>Local businesses help make our block parties and neighborhood events possible. We thank our sponsors here on the website.</p>
+      <div class="card__actions">
+        <a class="btn btn--secondary btn--small" href="#contact-form" data-topic="Sponsoring an event">Talk to us about sponsoring</a>
+      </div>
+      <p class="card__meta"><a href="/events/#past-events">See past sponsors</a></p>
+    </aside>
+  </div>
+</section>
+
+{% include "partials/interest-form.njk" %}

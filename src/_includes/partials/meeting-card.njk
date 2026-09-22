@@ -1,0 +1,22 @@
+{#- Next-meeting card. js/main.js fills in the real date; the text below is the
+    fallback shown without JavaScript. Meeting details live in _data/site.yml. -#}
+{%- set m = site.meeting -%}
+<div class="meeting" id="next-meeting">
+  <div class="date-tile" aria-hidden="true" hidden>
+    <span class="date-tile__month" data-meeting="month"></span>
+    <span class="date-tile__day" data-meeting="day"></span>
+  </div>
+  <div class="meeting__head">
+    <h2 id="meeting-title">Next neighborhood meeting</h2>
+    <p class="meeting__when" data-meeting="when">{{ m.schedule }}</p>
+  </div>
+  <div class="meeting__info">
+    <p data-meeting="time">{{ m.start | timeRange(m.end) }}</p>
+    <p data-meeting="place">{{ m.place }}, {{ m.address }}</p>
+  </div>
+  <div class="btn-row">
+    <a class="btn btn--secondary btn--small" data-meeting="gcal" href="/events/#calendar">Add to calendar</a>
+    <a class="btn btn--secondary btn--small" href="https://www.google.com/maps/search/?api=1&amp;query={{ (m.address + ' ' + m.cityStateZip) | urlencode }}" target="_blank" rel="noopener">Get directions<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  <p class="note">Neighbors are always welcome. Dates can shift around holidays, so check the <a href="/events/#calendar">calendar</a>.</p>
+</div>

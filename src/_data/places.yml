@@ -1,0 +1,22 @@
+# ============================================================================
+# Parks, trails, and places on the Neighborhood page.
+# Details come from Indy Parks. Leave "url" out for places with no page.
+# ============================================================================
+
+- name: Dr. Martin Luther King Jr. Park
+  url: https://parks.indy.gov/parks/dr-martin-luther-king-jr-park/
+  address: 1702 N Broadway St
+  summary: Nearly 14 acres with a pool, playground, basketball court, and shelter. The Landmark for Peace memorial stands at the south end, recently reopened with new exhibits and walking paths, beside the Kennedy King Park Center.
+
+- name: JTV Hill Park
+  url: https://parks.indy.gov/parks/jtv-hill-park/
+  address: 1806 N Columbia Ave
+  summary: Ten acres with a recreation center, playground, shelters, softball diamonds, soccer fields, and basketball courts. Named for James T.V. Hill, one of the first Black attorneys admitted to the bar in Indianapolis.
+
+- name: Frank and Judy O'Bannon Park
+  url: https://parks.indy.gov/parks/frank-and-judy-obannon-soccer-fld/
+  address: 1001 E 16th St
+  summary: Soccer fields, plus a playground, splash pad, and shelter added in 2023. It connects straight onto the Monon Trail at our southern edge.
+
+- name: The Monon Trail
+  summary: The paved rail trail runs along our eastern edge, linking the neighborhood to downtown in one direction and the north side in the other.

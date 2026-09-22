@@ -1,0 +1,17 @@
+{#- Email signup band, shown at the bottom of every page (turn off with
+    "signup: false" in a page's front matter). Connects to Mailchimp once
+    mailchimp.formAction is set in _data/site.yml. -#}
+<section class="section signup" aria-labelledby="signup-title">
+  <div class="container signup__grid">
+    <div>
+      <h2 id="signup-title">Get neighborhood updates</h2>
+      <p>Meeting reminders, event news, and what's happening on your block, sent to your inbox.</p>
+    </div>
+    <form class="signup__form" id="signup-form">
+      <label for="signup-email">Email address</label>
+      <input id="signup-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <button class="btn btn--light" type="submit">Sign up</button>
+      <p class="signup__status" id="signup-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

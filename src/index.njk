@@ -1,0 +1,103 @@
+---
+layout: layouts/base.njk
+description: The Kennedy-King Neighborhood Association brings together neighbors between 16th and 22nd Streets, from Central Avenue to the Monon Trail, on Indianapolis's near north side.
+---
+{# TODO: all copy on this page is a draft for the board to review. #}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div>
+      <h1 id="hero-title">A landmark neighborhood</h1>
+      <p class="lead">We're the neighbors between 16th and 22nd Streets, from Central Avenue to the Monon Trail, on Indianapolis's near north side. Come to a meeting, meet the people on your block, and help shape what comes next.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/events/">See upcoming events</a>
+        <a class="btn btn--secondary" href="/get-involved/">Get involved</a>
+      </div>
+    </div>
+    {# TODO: placeholder photo. Replace with a licensed photo and credit the photographer. #}
+    <figure class="hero__media">
+      <img src="/images/landmark-for-peace.jpg" width="596" height="335"
+           alt="The Landmark for Peace sculpture: bronze figures of Robert F. Kennedy and Martin Luther King Jr. reaching toward each other across a park lawn.">
+      <figcaption>The Landmark for Peace in Dr. Martin Luther King Jr. Park</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="container meeting-wrap" aria-labelledby="meeting-title">
+  {% include "partials/meeting-card.njk" %}
+</section>
+
+<section class="section section--alt" aria-labelledby="events-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="events-title">Coming up</h2>
+      <a class="more-link" href="/events/#calendar">Full calendar</a>
+    </div>
+    {# Filled from the community Google Calendar once calendar.apiKey is set in _data/site.yml. #}
+    <ol class="event-list" id="event-list" hidden></ol>
+    <div class="callout" id="events-fallback">
+      <p>Block parties, clean-ups, and neighborhood gatherings are posted on our community calendar.</p>
+      <p><a class="more-link" href="/events/#calendar">Open the community calendar</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="involved-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="involved-title">Get involved</h2>
+        <p>The association is run by neighbors who volunteer. Pick the way that fits your schedule.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Come to a meeting</h3>
+        <p>Once a month, hear what's happening in the neighborhood, meet the board, and have your say.</p>
+        <a class="more-link" href="/events/">Meeting details</a>
+      </article>
+      <article class="card">
+        <h3>Join a committee</h3>
+        <p>Community engagement, land use, neighborhood clean-up, and crime watch all need neighbors.</p>
+        <a class="more-link" href="/get-involved/#committees">See the committees</a>
+      </article>
+      <article class="card">
+        <h3>Help at an event</h3>
+        <p>Block parties and clean-up days run on volunteers for setup, welcome tables, and teardown.</p>
+        <a class="more-link" href="/get-involved/#volunteer">Volunteer</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="history-title">
+  <div class="container">
+    <p class="eyebrow">Our history</p>
+    <h2 id="history-title">How we got our name</h2>
+    <p>On the night Dr. Martin Luther King Jr. was killed, Robert Kennedy was due to give a campaign speech here. Instead, he broke the news to the crowd and asked them to answer with compassion. Indianapolis stayed peaceful while cities across the country burned, and the neighborhood takes its name from that night.</p>
+    <a class="more-link" href="/history/">Read our history</a>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="living-title">
+  <div class="container split split--media-right">
+    {# TODO: map from King Park Development Corporation. Confirm permission or replace. #}
+    <figure class="split__media">
+      <img src="/images/king-park-map.webp" width="750" height="807" loading="lazy"
+           alt="Map of the King Park area. Kennedy-King runs from 16th Street north to 22nd Street, between Central Avenue and the Monon Trail, with MLK Park inside it.">
+      <figcaption>Map: King Park Development Corporation</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Living here</p>
+      <h2 id="living-title">Life in Kennedy-King</h2>
+      <p>A small, walkable neighborhood just north of downtown, with homes dating back to the 1800s and new neighbors arriving every year.</p>
+      <ul class="checklist">
+        <li>From 16th to 22nd Street, between Central Avenue and the Monon Trail</li>
+        <li>Home to Dr. Martin Luther King Jr. Park and the Landmark for Peace</li>
+        <li>The Monon Trail runs right along our east side</li>
+        <li>Part of the larger King Park area of neighborhoods</li>
+      </ul>
+      <a class="more-link" href="/neighborhood/">Explore the neighborhood</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Kennedy-King design tokens
+   Change the look of the whole site from this one file. Every other
+   stylesheet reads these variables instead of hard-coding values.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand color (sampled from the logo) ---- */
+  --color-red: #d51e3e;        /* buttons, accents. White text on it: 5.1:1 */
+  --color-red-dark: #a9152f;   /* hover state, red text links. On white: 7.4:1 */
+  --color-red-tint: #fbecee;   /* soft red backgrounds */
+
+  /* ---- Neutrals (warm, so they sit well next to the red) ---- */
+  --color-ink: #1e1a1b;        /* body text. On white: 17:1 */
+  --color-ink-soft: #4b4547;   /* secondary text. On white: 9.4:1 */
+  --color-line: #e6e1dd;       /* borders and dividers */
+  --color-paper: #ffffff;
+  --color-sand: #f6f3ef;       /* alternating section background */
+
+  /* ---- Roles: use these in components, not the raw colors above ---- */
+  --text: var(--color-ink);
+  --text-soft: var(--color-ink-soft);
+  --text-on-accent: #ffffff;
+  --bg: var(--color-paper);
+  --bg-alt: var(--color-sand);
+  --accent: var(--color-red);
+  --accent-hover: var(--color-red-dark);
+  --link: var(--color-red-dark);
+  --border: var(--color-line);
+  --focus: var(--color-ink);
+
+  /* ---- Typography ---- */
+  --font-display: "Oswald", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Fluid type scale: each step grows smoothly from phone to desktop */
+  --step--1: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);  /* 14–15px  small print */
+  --step-0:  clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);   /* 17–19px  body */
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);      /* 20–24px  card titles */
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 2rem);            /* 24–32px  section titles */
+  --step-3:  clamp(1.875rem, 1.5rem + 1.8vw, 2.75rem);     /* 30–44px  page titles */
+  --step-4:  clamp(2.25rem, 1.6rem + 3vw, 4rem);           /* 36–64px  home hero */
+
+  --leading-tight: 1.1;
+  --leading-body: 1.6;
+  --measure: 65ch;             /* comfortable line length for paragraphs */
+
+  /* ---- Spacing ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --section: clamp(3rem, 2rem + 4vw, 6rem);   /* vertical padding for page sections */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem); /* left/right page padding */
+
+  /* ---- Shape and layout ---- */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --container: 72rem;          /* max content width, about 1150px */
+  --tap: 2.75rem;              /* minimum touch target, 44px */
+}

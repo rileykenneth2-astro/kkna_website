@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+title: History
+description: How the Kennedy-King neighborhood got its name on April 4, 1968, the Landmark for Peace memorial, and the history of this part of Indianapolis.
+heading: Our history
+lead: The neighborhood dates back to the 1800s. Its name comes from one night in April 1968.
+---
+{% from "partials/macros.njk" import ext %}
+
+<section class="section" aria-labelledby="name-title">
+  <div class="container">
+    <h2 id="name-title">How the neighborhood got its name</h2>
+    {# Text carried over from the old About page. TODO: the population and household
+       figures came from that page and should be checked against current census data. #}
+    <p>The Kennedy-King neighborhood dates back to the 1800s and is rich in architectural history. The name Kennedy-King, though, came about on April 4, 1968, with the assassination of Dr. Martin Luther King Jr.</p>
+    <p>On that cold and dreary April evening, Robert Kennedy was scheduled to give a campaign speech in Indianapolis. Instead, he delivered a word of encouragement to a city broken by devastating news. A historic landmark was created that night, and a great neighborhood was given its name.</p>
+    <p>Kennedy-King is one of Indianapolis's fastest growing urban neighborhoods. With a population under a thousand and fewer than four hundred households, it's a quiet and unique neighborhood to be part of.</p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="speech-title">
+  <div class="container">
+    <h2 id="speech-title">April 4, 1968</h2>
+    <p>On April 4, 1968, Robert F. Kennedy announced the death of Martin Luther King Jr. to a mostly Black crowd in an Indianapolis park. His impromptu speech is regarded as one of the most powerful and important addresses in American history.</p>
+    <p>Kennedy's words were equal parts eulogy and call for peace, and they came as violence erupted across America. Because of his message of compassion, the crowd in Indianapolis went home peacefully. As cities across the country burned, Indianapolis remained calm.</p>
+
+    {# TODO: the first video is a personal re-upload and could disappear. Consider
+       replacing it with a copy from an official channel. #}
+    <figure class="video">
+      <div class="video__frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/GoKzCff8Zbs" loading="lazy" allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Robert F. Kennedy announcing the death of Martin Luther King Jr."></iframe>
+      </div>
+      <figcaption>Robert F. Kennedy announces the death of Dr. King, Indianapolis, April 4, 1968.</figcaption>
+    </figure>
+
+    <figure class="video">
+      <div class="video__frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/A2kWIa8wSC0" loading="lazy" allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Indianapolis, 1968: Bobby Kennedy, Martin Luther King and a historic call for peace"></iframe>
+      </div>
+      <figcaption>Indianapolis, 1968: a historic call for peace, from the Robert F. Kennedy Human Rights Center.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="landmark-title">
+  <div class="container split split--media-right">
+    {# TODO: placeholder photo. Replace with a licensed photo and credit the photographer. #}
+    <figure class="split__media">
+      <img src="/images/landmark-for-peace.jpg" width="596" height="335" loading="lazy"
+           alt="The Landmark for Peace sculpture: bronze figures of Robert F. Kennedy and Martin Luther King Jr. reaching toward each other across a park lawn.">
+    </figure>
+    <div>
+      <h2 id="landmark-title">The Landmark for Peace</h2>
+      <p>The Landmark for Peace is a memorial sculpture in Dr. Martin Luther King Jr. Park, on the north side of Indianapolis. It honors Robert F. Kennedy and Martin Luther King Jr., and shows the two men reaching out toward each other.</p>
+      <p>It was designed by Indiana artist Greg Perry, and the bronze portraits were created by Indianapolis sculptor Daniel Edwards. On April 4, 2018, the memorial was designated the Kennedy-King National Commemorative Site.</p>
+      <p>After a rebuild of the park around it, the memorial has reopened with new exhibits and new walking paths. It's worth a visit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="kkmi-title">
+  <div class="container">
+    <h2 id="kkmi-title">The Kennedy King Memorial Initiative</h2>
+    <p>The Kennedy King Memorial Initiative is a separate nonprofit, founded in 2015, that builds on the events of April 4, 1968, to raise awareness, provoke thought, and inspire action against division and injustice. Its plans would turn the Martin Luther King Park campus into a place where people, institutions, and community partners come together.</p>
+    <p>{{ ext("https://www.kennedykingindy.org", "Visit the Kennedy King Memorial Initiative", "btn btn--secondary") }}</p>
+  </div>
+</section>
+
+{# TODO: placeholder section. Replace with more neighborhood history, then delete this note. #}
+<section class="section" aria-labelledby="more-title">
+  <div class="container">
+    <h2 id="more-title">More of our history</h2>
+    <div class="callout">
+      <p><strong>Placeholder:</strong> this is where more neighborhood history will go. Some ideas: the architecture and oldest homes, how the association got started, neighbors worth remembering, and photos from the archives.</p>
+      <p>If you have stories, documents, or photographs to share, email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    </div>
+  </div>
+</section>

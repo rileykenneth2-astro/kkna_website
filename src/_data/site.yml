@@ -1,0 +1,54 @@
+# ============================================================================
+# Site-wide settings. Changes here show up on every page.
+# Tip: wrap any value that contains a # or : in "quotes".
+# ============================================================================
+
+name: Kennedy-King Neighborhood Association
+shortName: Kennedy-King
+city: Indianapolis, Indiana
+url: https://www.kennedykingnbhd.org
+email: kennedykingneighbors@gmail.com
+facebook: https://www.facebook.com/kennedykingnbhd
+
+# Monthly neighborhood meeting (home page card, Events page, footer).
+meeting:
+  schedule: Last Monday of each month
+  rule: last-monday
+  start: "18:30"          # 24-hour time
+  end: "19:30"
+  place: "CFI School #27"
+  address: 545 E 19th St
+  cityStateZip: Indianapolis, IN 46202
+
+# Community Google Calendar. The board updates events there, not here.
+calendar:
+  id: kennedykingneighbors@gmail.com
+  apiKey: ""              # TODO: Google Calendar API key, restricted to the site's domain
+  meetingKeyword: meeting # an event with this word in its title is "the meeting"
+
+# Contact and interest form. Works with a free form service such as
+# Formspree or Web3Forms: both email submissions straight to the address above.
+forms:
+  endpoint: https://api.web3forms.com/submit
+  accessKey: ""           # TODO: paste the Web3Forms access key emailed to the association
+
+# Mailchimp embedded-form URL (Audience > Signup forms > Embedded forms).
+mailchimp:
+  formAction: ""          # TODO: paste once the board has Mailchimp access
+
+# Main menu, in order.
+nav:
+  - label: Events
+    url: /events/
+  - label: Neighborhood
+    url: /neighborhood/
+  - label: History
+    url: /history/
+  - label: Resources
+    url: /resources/
+  - label: About
+    url: /about/
+
+navButton:
+  label: Get involved
+  url: /get-involved/

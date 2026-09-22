@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: Neighborhood
+description: Where the Kennedy-King neighborhood is, the parks and trails inside it, and what it's like to live here on the near north side of Indianapolis.
+heading: Our neighborhood
+lead: A small, walkable neighborhood just north of downtown Indianapolis, between 16th and 22nd Streets.
+---
+{% from "partials/macros.njk" import ext %}
+
+<section class="section" aria-labelledby="where-title">
+  <div class="container split split--media-right">
+    {# TODO: map from King Park Development Corporation. Confirm permission or replace. #}
+    <figure class="split__media">
+      <img src="/images/king-park-map.webp" width="750" height="807" loading="lazy"
+           alt="Map of the King Park area. Kennedy-King runs from 16th Street north to 22nd Street, between Central Avenue and the Monon Trail, with MLK Park inside it.">
+      <figcaption>Map: King Park Development Corporation</figcaption>
+    </figure>
+    <div>
+      <h2 id="where-title">Where we are</h2>
+      <p>Kennedy-King sits on the near north side, a short walk or ride from downtown.</p>
+      <ul class="checklist">
+        <li><strong>South:</strong> 16th Street</li>
+        <li><strong>North:</strong> 22nd Street</li>
+        <li><strong>East:</strong> the Monon Trail</li>
+        <li><strong>West:</strong> Central Avenue</li>
+      </ul>
+      <p>Dr. Martin Luther King Jr. Park sits inside those lines, and we're part of the wider King Park area of neighborhoods.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="places-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="places-title">Parks and trails</h2>
+        <p>All of them are free, and open dawn to dusk.</p>
+      </div>
+    </div>
+    {# Places come from _data/places.yml #}
+    <div class="card-grid card-grid--2">
+      {%- for place in places %}
+      <article class="card">
+        <h3>{% if place.url %}{{ ext(place.url, place.name) }}{% else %}{{ place.name }}{% endif %}</h3>
+        <p>{{ place.summary }}</p>
+        {%- if place.address %}<p class="card__meta">{{ place.address }}</p>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="living-title">
+  <div class="container">
+    <h2 id="living-title">Living here</h2>
+    {# TODO: draft copy, drawn from the old About page. #}
+    <p>The neighborhood dates back to the 1800s and is rich in architectural history. It's one of the city's fastest growing urban neighborhoods, and still a quiet one: under a thousand residents in fewer than four hundred households, where people know the names of the folks on their block.</p>
+    <p>Neighbors meet on the last Monday of each month, and the association organizes clean-ups, block parties, and get-togethers through the year. <a href="/get-involved/">Everyone is welcome to take part</a>.</p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="partners-title">
+  <div class="container">
+    <h2 id="partners-title">Who we work with</h2>
+    <div class="card-grid card-grid--2">
+      <article class="card">
+        {# Link dropped: kingpark.org returns a security certificate warning. #}
+        <h3>King Park Development Corporation</h3>
+        <p>Works across the King Park neighborhoods, including ours, on housing, economic opportunity, and community services, with the aim of keeping the area open to residents at every income level.</p>
+      </article>
+      <article class="card">
+        <h3>{{ ext("https://www.kennedykingindy.org", "Kennedy King Memorial Initiative") }}</h3>
+        <p>A nonprofit founded in 2015 that builds on the events of April 4, 1968, and has plans to transform the Martin Luther King Park campus into a gathering place for dialogue and action.</p>
+        <p class="card__meta"><a href="/history/">Read the history</a></p>
+      </article>
+    </div>
+  </div>
+</section>

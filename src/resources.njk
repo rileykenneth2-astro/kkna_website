@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: Resources
+description: Who to call about city services, when trash and recycling are collected, and where to look up property and zoning in the Kennedy-King neighborhood.
+heading: Resources
+lead: Who to call, when things get collected, and where to look things up.
+---
+{% from "partials/macros.njk" import ext %}
+
+{#- Everything on this page comes from _data/resources.yml -#}
+{%- for group in resources %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" aria-labelledby="res-{{ loop.index }}">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="res-{{ loop.index }}">{{ group.section }}</h2>
+        {% if group.intro %}<p>{{ group.intro }}</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="card-grid card-grid--2">
+      {%- for item in group.items %}
+      <article class="card">
+        <h3>{% if item.url %}{{ ext(item.url, item.name) }}{% else %}{{ item.name }}{% endif %}</h3>
+        <p>{{ item.summary }}</p>
+
+        <dl class="details">
+          {%- if item.phone %}
+          <dt>Phone</dt>
+          <dd><a href="{{ item.phone | telHref }}">{{ item.phone }}</a></dd>
+          {%- endif %}
+          {%- if item.address %}
+          <dt>Address</dt>
+          <dd>{{ item.address }}</dd>
+          {%- endif %}
+          {%- if item.hours %}
+          <dt>Hours</dt>
+          <dd>
+            {%- for line in item.hours %}
+            {{ line }}{% if not loop.last %}<br>{% endif %}
+            {%- endfor %}
+          </dd>
+          {%- endif %}
+        </dl>
+
+        {%- if item.note %}
+        <p class="card__meta">{{ item.note }} <a href="/events/#calendar">Community calendar</a></p>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+<section class="section" aria-labelledby="missing-title">
+  <div class="container">
+    <h2 id="missing-title">Something missing?</h2>
+    <p>If neighbors keep asking about something that isn't here, tell us and we'll add it. Email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+</section>

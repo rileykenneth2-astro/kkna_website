@@ -1,0 +1,31 @@
+# ============================================================================
+# Past events on the Events page, newest first.
+# To add one, copy a block to the top. "sponsors" is optional.
+# ============================================================================
+
+- title: Kennedy-King Summer Celebration
+  date: 2022-09-10
+  summary: We moved our block party into the streets, and it was a huge success.
+  sponsors:
+    - name: Scarlet Lane Brewing
+      url: https://www.scarletlanebrew.com/
+    - name: West Fork Whiskey
+      url: https://www.westforkwhiskey.com/
+    - name: "@properties"
+      url: https://atproperties.com/indianapolis
+    - name: Compendium
+      url: https://cg317.com/
+    - name: Onyx+East
+      url: https://www.onyxandeast.com/
+    - name: HE Homes
+      url: https://www.he-homes.com/
+    - name: Chop Chop Barbershop
+      url: https://chopchopbarbers.com/
+    - name: Branch Group Realty
+      url: https://www.branchgrouprealty.com/
+    - name: The Harrison Center
+      url: https://www.harrisoncenter.org/
+    - name: Myriad
+      url: https://myriadfit.com/
+    - name: Liftoff Creamery
+      url: https://www.liftoffcreamery.com/

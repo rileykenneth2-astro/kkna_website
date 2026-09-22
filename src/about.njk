@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: About
+description: The Kennedy-King Neighborhood Association is a nonprofit run by neighbors, honoring the neighborhood's history and building its future on the near north side of Indianapolis.
+heading: About us
+lead: The Kennedy-King Neighborhood Association is a nonprofit that honors this neighborhood's rich history while building a vibrant future in the city of Indianapolis.
+formTitle: Contact us
+---
+
+<section class="section" aria-labelledby="role-title">
+  <div class="container">
+    <h2 id="role-title">What the board does</h2>
+    <p class="lead">The board connects our neighbors with the wider community. Our job is to make sure every resident can stay informed, raise concerns, share ideas, and reach the resources and opportunities that shape Kennedy-King.</p>
+    <p>The board is made up of neighbors who volunteer their time. Everyone who lives here is welcome at the monthly meeting, whether or not you hold a seat.</p>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="board-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="board-title">Board of directors</h2>
+        <p>Elected by neighbors to serve the association.</p>
+      </div>
+    </div>
+
+    {# Board members come from _data/board.yml #}
+    <div class="card-grid people">
+      {%- for person in board %}
+      <article class="card person">
+        <div class="person__photo">
+          {%- if person.photo %}
+          <img src="/images/{{ person.photo }}" alt="{{ person.name }}" width="400" height="400" loading="lazy">
+          {%- else %}
+          <span aria-hidden="true">Photo to come</span>
+          {%- endif %}
+        </div>
+        <h3>{{ person.name | default("To be announced", true) }}</h3>
+        <p class="person__role">{{ person.role }}</p>
+        {%- if person.bio %}<p>{{ person.bio }}</p>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+
+    <p class="note">Committee chairs and what each committee does are on the <a href="/get-involved/#committees">Get involved</a> page.</p>
+  </div>
+</section>
+
+<section class="container meeting-wrap" aria-labelledby="meetings-heading">
+  <h2 id="meetings-heading">Come to a meeting</h2>
+  <p class="section-intro">Board meetings are open to everyone in the neighborhood. Bring a concern, an idea, or just come and listen.</p>
+  {% include "partials/meeting-card.njk" %}
+</section>
+
+{% include "partials/interest-form.njk" %}

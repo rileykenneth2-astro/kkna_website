@@ -1,0 +1,7 @@
+{#- Link to another website. Opens in a new tab, and tells screen-reader users
+    so, since the visual cue of a new tab isn't available to them.
+    Usage: {{ ext("https://example.com", "Example") }}
+           {{ ext(url, label, "btn btn--secondary btn--small") }} -#}
+{% macro ext(url, label, cls) -%}
+<a href="{{ url }}"{% if cls %} class="{{ cls }}"{% endif %} target="_blank" rel="noopener">{{ label }}<span class="visually-hidden"> (opens in a new tab)</span></a>
+{%- endmacro %}

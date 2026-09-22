@@ -1,0 +1,44 @@
+# ============================================================================
+# Board of directors, in the order shown on the About page.
+#   name:  leave blank and the card reads "To be announced"
+#   role:  the seat, e.g. President
+#   bio:   one or two sentences
+#   photo: a file in src/images, e.g. board-jane-doe.jpg. Leave blank for none.
+# ============================================================================
+
+# TODO: placeholders. Replace with the current board, bios, and photos.
+
+- name: ""
+  role: President
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Vice President
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Treasurer
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Secretary
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Board member
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Board member
+  bio: ""
+  photo: ""
+
+- name: ""
+  role: Board member
+  bio: ""
+  photo: ""

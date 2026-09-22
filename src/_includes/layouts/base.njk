@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} | Indianapolis{% endif %}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/images/landmark-for-peace.jpg">
+
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="/js/site-config.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main">
+    {% if heading %}
+    <header class="page-header">
+      <div class="container">
+        <h1>{{ heading }}</h1>
+        {% if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+      </div>
+    </header>
+    {% endif %}
+
+    {{ content | safe }}
+
+    {% if signup != false %}{% include "partials/signup.njk" %}{% endif %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

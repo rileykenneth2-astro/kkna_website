@@ -1,0 +1,49 @@
+{#- Contact / interest form. Buttons elsewhere on the page carry data-topic and
+    preselect the dropdown. Sends through the form service set in
+    _data/site.yml (forms.endpoint); until that's filled in, it tells people
+    to email instead. -#}
+<section class="section section--alt" id="contact-form" aria-labelledby="form-title">
+  <div class="container">
+    <h2 id="form-title">{{ formTitle | default("Tell us you're interested") }}</h2>
+    <p>Fill this in and the right person will get back to you, usually within two or three days. You can also email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+
+    <form class="form" id="interest-form">
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Email address</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-topic">I'm interested in</label>
+        <select id="f-topic" name="topic">
+          <option value="Coming to a meeting">Coming to a meeting</option>
+          {%- for c in committees %}
+          <option value="{{ c.name }} committee">{{ c.name }} committee</option>
+          {%- endfor %}
+          <option value="Volunteering at events">Volunteering at events</option>
+          <option value="Sponsoring an event">Sponsoring an event</option>
+          <option value="Something else">Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-message">Message <span class="field__hint">(optional)</span></label>
+        <textarea id="f-message" name="message" rows="4"></textarea>
+      </div>
+
+      {#- Subject line for the email the board receives. -#}
+      <input type="hidden" name="subject" value="New message from the Kennedy-King website">
+
+      {#- Spam traps: real people leave these empty. -#}
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
+      <input type="checkbox" name="botcheck" tabindex="-1" class="visually-hidden" aria-hidden="true">
+
+      <div class="form__actions">
+        <button class="btn btn--primary" type="submit">Send</button>
+      </div>
+      <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

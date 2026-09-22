@@ -1,0 +1,39 @@
+# ============================================================================
+# Resources page. Each block is a section; each section has items.
+# Fields per item: name, summary, url, phone, address, hours (a list), note.
+# Anything you leave out is simply not shown.
+# ============================================================================
+
+# TODO: a board member should click the indy.gov links once to confirm they
+# land on the right page. Their site is hard to check automatically.
+
+- section: Report a problem to the city
+  intro: Potholes, high weeds, trash cart problems, animal care, and other non-emergency issues.
+  items:
+    - name: Request Indy
+      url: https://www.indy.gov/activity/request-indy
+      summary: The city's system for non-emergency service requests. Use the website, or the Indy 311 app on your phone.
+      phone: (317) 327-4622
+
+    - name: Mayor's Action Center
+      url: https://www.indy.gov/agency/mayors-action-center
+      summary: Helps residents connect with city departments, in person or by phone.
+      address: 200 E Washington St, Suite 2160, Indianapolis, IN 46204
+      hours:
+        - Monday, Tuesday, Wednesday and Friday, 8 am to 5 pm
+        - Thursday, 8 am to 2 pm and 3 pm to 5 pm
+
+- section: Trash and recycling
+  items:
+    - name: Trash
+      summary: Collected every Thursday. On most of our blocks, carts are picked up in the alley.
+
+    - name: Recycling
+      summary: Collected every other Thursday.
+      note: Check the community calendar for which weeks.
+
+- section: Look up property and zoning
+  items:
+    - name: MapIndy
+      url: https://maps.indy.gov/MapIndy/
+      summary: The city's public mapping tool for property lines, zoning, and neighborhood information.
