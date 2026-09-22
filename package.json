@@ -1,0 +1,17 @@
+{
+  "name": "kkna-website",
+  "private": true,
+  "description": "Kennedy-King Neighborhood Association website",
+  "scripts": {
+    "start": "eleventy --serve --port=8420",
+    "build": "eleventy"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "js-yaml": "^5.4.2"
+  },
+  "type": "module"
+}
