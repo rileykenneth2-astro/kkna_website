@@ -6,3 +6,7 @@ _site/
 # they show identifiable children and one carries GPS location data.
 # The photos actually used by the site live in src/images/.
 images/
+
+# Saved pages from the old GoDaddy site, kept locally as reference only.
+# They embed GoDaddy's own Mapbox token, which GitHub's secret scanner flags.
+kkna_old_source/
