@@ -4,9 +4,10 @@ _site/
 
 # Original photo files, kept out of the repository on purpose:
 # they show identifiable children and one carries GPS location data.
-# The photos actually used by the site live in src/images/.
-images/
+# The leading slash matters: it excludes only the folder at the top
+# level, not src/images/, which holds the pictures the site uses.
+/images/
 
 # Saved pages from the old GoDaddy site, kept locally as reference only.
 # They embed GoDaddy's own Mapbox token, which GitHub's secret scanner flags.
-kkna_old_source/
+/kkna_old_source/
