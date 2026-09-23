@@ -308,6 +308,22 @@
     });
   }
 
+  /* ---- Banner link to the signup band ------------------------------------ */
+
+  document.querySelectorAll("[data-jump-signup]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var target = document.getElementById("signup-form");
+      if (!target) return;
+      e.preventDefault();
+      var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "center" });
+      window.setTimeout(function () {
+        var email = document.getElementById("signup-email");
+        if (email) email.focus({ preventScroll: true });
+      }, still ? 0 : 700);
+    });
+  });
+
   /* ---- Email signup (Mailchimp) ----------------------------------------- */
 
   var form = document.getElementById("signup-form");

@@ -5,7 +5,7 @@
 
    1. Base          5. Hero                    9. Page header, jump links
    2. Layout        6. Meeting card           10. Split layout
-   3. Buttons       7. Events and calendar   10a. Video, 10b. Forms
+  3b. Banner        7. Events and calendar   10a. Video, 10b. Forms
    4. Header/nav    8. Cards                  11. Signup band, 12. Footer
    ========================================================================== */
 
@@ -65,6 +65,13 @@ a:hover { color: var(--text); }
 .lead { font-size: var(--step-1); line-height: 1.45; color: var(--text-soft); }
 
 .note { font-size: var(--step--1); color: var(--text-soft); }
+
+.statement {
+  padding-left: var(--space-s);
+  border-left: 4px solid var(--accent);
+  font-size: var(--step-1);
+  line-height: 1.45;
+}
 
 .visually-hidden {
   position: absolute !important;
@@ -142,6 +149,28 @@ a:hover { color: var(--text); }
 .btn--small { min-height: 2.5rem; padding: 0.375rem 0.875rem; font-size: var(--step--1); }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+/* 3b. Announcement banner -------------------------------------------------- */
+
+.announce {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  --focus: #ffffff;
+  text-align: center;
+}
+.announce__link {
+  display: block;
+  padding: var(--space-2xs) var(--gutter);
+  color: inherit;
+  font-size: var(--step--1);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.announce__link:hover { color: inherit; text-decoration: underline; }
+.announce__end { white-space: nowrap; }  /* keeps the arrow beside the last word */
+.announce__arrow { display: inline-block; margin-left: 0.25rem; }
+.announce__link:hover .announce__arrow { transform: translateX(2px); }
 
 /* 4. Header and navigation ----------------------------------------------- */
 

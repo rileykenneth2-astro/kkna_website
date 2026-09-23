@@ -30,6 +30,8 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  {% if banner %}{% include "partials/announce.njk" %}{% endif %}
+
   {% include "partials/header.njk" %}
 
   <main id="main">
