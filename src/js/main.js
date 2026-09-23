@@ -325,37 +325,42 @@
   });
 
   /* ---- Email signup (Mailchimp) ----------------------------------------- */
+  /* Runs for every form marked data-signup: the banner box and the band at
+     the foot of the page both use this. */
 
-  var form = document.getElementById("signup-form");
-  var status = document.getElementById("signup-status");
-  var action = cfg.mailchimp && cfg.mailchimp.formAction;
+  var mailchimp = (cfg.mailchimp && cfg.mailchimp.formAction) || "";
 
-  if (form && action) {
-    form.action = action;
-    form.method = "post";
-    form.target = "_blank";
-    // Mailchimp's spam trap field is named b_<u>_<id>, taken from the form URL.
-    var q = new URL(action).searchParams;
-    if (q.get("u") && q.get("id")) {
-      var trap = document.createElement("input");
-      trap.type = "text";
-      trap.name = "b_" + q.get("u") + "_" + q.get("id");
-      trap.tabIndex = -1;
-      trap.autocomplete = "off";
-      trap.className = "visually-hidden";
-      trap.setAttribute("aria-hidden", "true");
-      form.appendChild(trap);
-    }
-    form.addEventListener("submit", function () {
-      if (status) status.textContent = "Thanks! Check your inbox to confirm.";
-    });
-  } else if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (status) {
-        status.textContent = "Email signup is almost ready. Until then, write to " +
-          (cfg.contactEmail || "us") + " and we'll add you.";
+  document.querySelectorAll("[data-signup]").forEach(function (form) {
+    var status = form.parentElement.querySelector("[data-signup-status]") ||
+                 form.querySelector("[data-signup-status]");
+
+    if (mailchimp) {
+      form.action = mailchimp;
+      form.method = "post";
+      form.target = "_blank";
+      // Mailchimp's spam trap field is named b_<u>_<id>, taken from the form URL.
+      var q = new URL(mailchimp).searchParams;
+      if (q.get("u") && q.get("id")) {
+        var trap = document.createElement("input");
+        trap.type = "text";
+        trap.name = "b_" + q.get("u") + "_" + q.get("id");
+        trap.tabIndex = -1;
+        trap.autocomplete = "off";
+        trap.className = "visually-hidden";
+        trap.setAttribute("aria-hidden", "true");
+        form.appendChild(trap);
       }
-    });
-  }
+      form.addEventListener("submit", function () {
+        if (status) status.textContent = "Thanks! Check your inbox to confirm.";
+      });
+    } else {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (status) {
+          status.textContent = "Email signup is almost ready. Until then, write to " +
+            (cfg.contactEmail || "us") + " and we'll add you.";
+        }
+      });
+    }
+  });
 })();

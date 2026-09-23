@@ -1,8 +1,22 @@
 {#- Banner across the top of the page, inviting people onto the email list.
-    Turn it on for a page with "banner: true" in that page's front matter.
-    The whole strip is one tap target; it jumps to the signup band below. -#}
+    In a page's front matter:
+      banner: form   an email box right in the banner
+      banner: link   one tappable line that jumps to the signup band below
+    Leave "banner" out altogether and no banner shows. -#}
 <aside class="announce">
+  {%- if banner == "form" %}
+  <div class="container announce__inner">
+    <p class="announce__text">Sign up here to stay in the know for all things <span class="nowrap">Kennedy-King!</span></p>
+    <form class="announce__form" id="banner-signup" data-signup>
+      <label class="visually-hidden" for="banner-email">Email address</label>
+      <input id="banner-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <button class="btn btn--light btn--small" type="submit">Sign up</button>
+    </form>
+    <p class="announce__status" data-signup-status role="status" aria-live="polite"></p>
+  </div>
+  {%- else %}
   <a class="announce__link" href="#signup-form" data-jump-signup>
-    Get neighborhood news and meeting reminders by<span class="announce__end">&nbsp;email <span class="announce__arrow" aria-hidden="true">&rarr;</span></span>
+    Sign up here to stay in the know for all things<span class="announce__end">&nbsp;Kennedy-King! <span class="announce__arrow" aria-hidden="true">&rarr;</span></span>
   </a>
+  {%- endif %}
 </aside>

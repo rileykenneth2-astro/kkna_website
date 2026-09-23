@@ -7,11 +7,11 @@
       <h2 id="signup-title">Get neighborhood updates</h2>
       <p>Meeting reminders, event news, and what's happening on your block, sent to your inbox.</p>
     </div>
-    <form class="signup__form" id="signup-form">
+    <form class="signup__form" id="signup-form" data-signup>
       <label for="signup-email">Email address</label>
       <input id="signup-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
       <button class="btn btn--light" type="submit">Sign up</button>
-      <p class="signup__status" id="signup-status" role="status" aria-live="polite"></p>
+      <p class="signup__status" id="signup-status" data-signup-status role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>

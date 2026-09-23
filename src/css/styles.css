@@ -168,7 +168,38 @@ a:hover { color: var(--text); }
   text-decoration: none;
 }
 .announce__link:hover { color: inherit; text-decoration: underline; }
-.announce__end { white-space: nowrap; }  /* keeps the arrow beside the last word */
+.announce__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs) var(--space-s);
+  padding-block: var(--space-2xs);
+}
+.announce__text {
+  margin: 0;
+  max-width: none;
+  font-weight: 600;
+  font-size: var(--step--1);
+  text-align: center;
+}
+.announce__form { display: flex; gap: var(--space-2xs); flex: 1 1 18rem; max-width: 26rem; }
+.announce__form input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: var(--step--1);
+  color: var(--text);
+}
+.announce__form input:focus-visible { outline-color: #ffffff; }
+.announce__status { flex-basis: 100%; margin: 0; font-size: var(--step--1); font-weight: 600; text-align: center; }
+.announce__status:empty { display: none; }
+
+.nowrap, .announce__end { white-space: nowrap; }  /* keeps the arrow beside the last word */
 .announce__arrow { display: inline-block; margin-left: 0.25rem; }
 .announce__link:hover .announce__arrow { transform: translateX(2px); }
 
