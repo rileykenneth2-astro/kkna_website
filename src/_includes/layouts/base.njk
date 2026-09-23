@@ -23,7 +23,16 @@
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    // Banner dismissals are remembered per browser; storage can throw when
+    // cookies are blocked, so the banner simply stays visible in that case.
+    try {
+      if (localStorage.getItem("kkna-banner-hidden") === "{{ site.bannerVersion }}") {
+        document.documentElement.classList.add("banner-hidden");
+      }
+    } catch (e) {}
+  </script>
   <script src="/js/site-config.js" defer></script>
   <script src="/js/main.js" defer></script>
 </head>

@@ -36,6 +36,10 @@ forms:
 mailchimp:
   formAction: ""          # TODO: paste once the board has Mailchimp access
 
+# The home page banner. Raise this number when the message changes and
+# everyone, including people who dismissed the old one, should see it again.
+bannerVersion: "1"
+
 # Main menu, in order.
 nav:
   - label: Events

@@ -6,7 +6,7 @@
 <aside class="announce">
   {%- if banner == "form" %}
   <div class="container announce__inner">
-    <p class="announce__text">Sign up here to stay in the know for all things <span class="nowrap">Kennedy-King!</span></p>
+    <p class="announce__text">Sign up here to stay in the know for all things <span class="nowrap">Kennedy-King</span></p>
     <form class="announce__form" id="banner-signup" data-signup>
       <label class="visually-hidden" for="banner-email">Email address</label>
       <input id="banner-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
@@ -16,7 +16,10 @@
   </div>
   {%- else %}
   <a class="announce__link" href="#signup-form" data-jump-signup>
-    Sign up here to stay in the know for all things<span class="announce__end">&nbsp;Kennedy-King! <span class="announce__arrow" aria-hidden="true">&rarr;</span></span>
+    Sign up here to stay in the know for all things<span class="announce__end">&nbsp;Kennedy-King <span class="announce__arrow" aria-hidden="true">&rarr;</span></span>
   </a>
   {%- endif %}
+  <button class="announce__close" type="button" data-banner-dismiss="{{ site.bannerVersion }}" aria-label="Hide this banner">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </aside>

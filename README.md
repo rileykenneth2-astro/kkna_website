@@ -9,12 +9,18 @@ Almost everything the board changes lives in `src/_data/`, as plain text files:
 
 | File | What it controls |
 |---|---|
-| `site.yml` | Contact details, meeting time and place, calendar, signup, the menu |
+| `site.yml` | Contact details, meeting time and place, calendar, signup, the menu, the banner version |
 | `board.yml` | Board members on the About page |
 | `committees.yml` | Committees on the Get Involved page |
 | `resources.yml` | The Resources page |
 | `places.yml` | Parks and trails on the Neighborhood page |
 | `past_events.yml` | Past events and sponsors on the Events page |
+
+The home page banner is switched in `src/index.njk`: `banner: form` shows an
+email box, `banner: link` shows a single line that jumps to the signup band,
+and deleting the line removes it. Visitors can dismiss the banner and it stays
+dismissed in their browser; raising `bannerVersion` in `site.yml` brings it
+back for everyone.
 
 **Events don't live here at all.** They come from the association's Google
 Calendar, so adding an event there puts it on the website automatically.

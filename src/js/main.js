@@ -308,6 +308,21 @@
     });
   }
 
+  /* ---- Banner dismissal --------------------------------------------------- */
+
+  var dismiss = document.querySelector("[data-banner-dismiss]");
+  if (dismiss) {
+    dismiss.addEventListener("click", function () {
+      var banner = dismiss.closest(".announce");
+      if (banner) banner.hidden = true;
+      try {
+        localStorage.setItem("kkna-banner-hidden", dismiss.getAttribute("data-banner-dismiss"));
+      } catch (e) {
+        // Storage blocked: the banner closes now but returns on the next visit.
+      }
+    });
+  }
+
   /* ---- Banner link to the signup band ------------------------------------ */
 
   document.querySelectorAll("[data-jump-signup]").forEach(function (link) {
