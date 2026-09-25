@@ -1,0 +1,23 @@
+# ============================================================================
+# Partner organisations on the Neighborhood page.
+# They're listed alphabetically by name automatically, so add new ones
+# anywhere in this file. "url", "link" and "note" are all optional.
+# ============================================================================
+
+- name: Friends of Dr. Martin Luther King Jr. Park
+  url: https://friendsofmlkparkorg.wordpress.com/
+  summary: The park's advisory council, dedicated to keeping the greenspace named after the civil rights leader clean, safe, and welcoming for everyone.
+  link:
+    label: Follow on Instagram
+    url: https://www.instagram.com/friends.mlk.park/
+
+- name: Kennedy King Memorial Initiative
+  url: https://www.kennedykingindy.org
+  summary: A nonprofit founded in 2015 that builds on the events of April 4, 1968, and has plans to transform the Martin Luther King Park campus into a gathering place for dialogue and action.
+  note:
+    label: Read the history
+    url: /history/
+
+# No website link: kingpark.org returns a security certificate warning.
+- name: King Park Development Corporation
+  summary: Works across the King Park neighborhoods, including ours, on housing, economic opportunity, and community services, with the aim of keeping the area open to residents at every income level.

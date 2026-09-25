@@ -62,22 +62,16 @@ lead: A small, walkable neighborhood just north of downtown Indianapolis, betwee
 <section class="section section--alt" aria-labelledby="partners-title">
   <div class="container">
     <h2 id="partners-title">Who we work with</h2>
+    {# Partners come from _data/partners.yml, listed alphabetically #}
     <div class="card-grid">
+      {%- for p in partners | sort(false, false, "name") %}
       <article class="card">
-        <h3>{{ ext("https://friendsofmlkparkorg.wordpress.com/", "Friends of Dr. Martin Luther King Jr. Park") }}</h3>
-        <p>The park's advisory council, dedicated to keeping the greenspace named after the civil rights leader clean, safe, and welcoming for everyone.</p>
-        <p class="card__meta">{{ ext("https://www.instagram.com/friends.mlk.park/", "Follow on Instagram") }}</p>
+        <h3>{% if p.url %}{{ ext(p.url, p.name) }}{% else %}{{ p.name }}{% endif %}</h3>
+        <p>{{ p.summary }}</p>
+        {%- if p.link %}<p class="card__meta">{{ ext(p.link.url, p.link.label) }}</p>{%- endif %}
+        {%- if p.note %}<p class="card__meta"><a href="{{ p.note.url }}">{{ p.note.label }}</a></p>{%- endif %}
       </article>
-      <article class="card">
-        {# Link dropped: kingpark.org returns a security certificate warning. #}
-        <h3>King Park Development Corporation</h3>
-        <p>Works across the King Park neighborhoods, including ours, on housing, economic opportunity, and community services, with the aim of keeping the area open to residents at every income level.</p>
-      </article>
-      <article class="card">
-        <h3>{{ ext("https://www.kennedykingindy.org", "Kennedy King Memorial Initiative") }}</h3>
-        <p>A nonprofit founded in 2015 that builds on the events of April 4, 1968, and has plans to transform the Martin Luther King Park campus into a gathering place for dialogue and action.</p>
-        <p class="card__meta"><a href="/history/">Read the history</a></p>
-      </article>
+      {%- endfor %}
     </div>
   </div>
 </section>

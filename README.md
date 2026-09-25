@@ -14,6 +14,7 @@ Almost everything the board changes lives in `src/_data/`, as plain text files:
 | `committees.yml` | Committees on the Get Involved page |
 | `resources.yml` | The Resources page |
 | `places.yml` | Parks and trails on the Neighborhood page |
+| `partners.yml` | Partner organisations on the Neighborhood page |
 | `past_events.yml` | Past events and sponsors on the Events page |
 
 The home page banner is switched in `src/index.njk`: `banner: form` shows an
