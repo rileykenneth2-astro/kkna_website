@@ -29,7 +29,7 @@ Search the code for `TODO` to find each spot.
 - [ ] **Recycling weeks.** The Resources page says "every other Thursday" and points at the community calendar, so the dates need to go on that calendar.
 
 ## About page
-- [ ] **Board members.** All seven cards read "To be announced" with "Photo to come" (`board.yml`). Add names, roles, one or two sentences each, and photos (drop image files in `src/images` and name them in the file).
+- [ ] **Board members** (Kenneth will update before launch). All seven cards read "To be announced" with "Photo to come" (`board.yml`). Add names, roles, one or two sentences each, and photos (drop image files in `src/images` and name them in the file).
 - [ ] Confirm the wording of "What the board does".
 
 ## History page
@@ -38,7 +38,7 @@ Search the code for `TODO` to find each spot.
 - [ ] "More of our history" now says the board is gathering it and invites stories. Replace with the real history once it's written.
 
 ## Home page
-- [ ] The "Coming up" section carries a relaunch message inviting people onto the email list. Once the social gathering has a date, put it on the Google Calendar; with the API key in place the events list replaces this message automatically.
+- [ ] The gathering notice ("A neighborhood gathering is in the works") shows on the home page and above the calendar on Events. It lives in `src/_includes/partials/gathering-notice.njk`. Once the gathering has a date, put it on the Google Calendar and remove the two includes.
 
 ## Copy to review (drafts)
 - [ ] Home: hero, get involved cards, history teaser, living here
