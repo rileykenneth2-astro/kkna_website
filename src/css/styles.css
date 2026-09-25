@@ -201,9 +201,9 @@ a:hover { color: var(--text); }
   font-size: var(--step--1);
   text-align: center;
 }
-.announce__form { display: flex; gap: var(--space-2xs); flex: 1 1 18rem; max-width: 26rem; }
+.announce__form { display: flex; flex-wrap: wrap; gap: var(--space-2xs); flex: 1 1 22rem; max-width: 34rem; }
 .announce__form input {
-  flex: 1 1 auto;
+  flex: 1 1 9rem;
   min-width: 0;
   min-height: 2.5rem;
   padding: 0.25rem 0.75rem;
@@ -214,6 +214,11 @@ a:hover { color: var(--text); }
   color: var(--text);
 }
 .announce__form input:focus-visible { outline-color: #ffffff; }
+.announce__name { display: none; }
+@media (min-width: 48em) {
+  .announce__name { display: flex; flex: 1 1 9rem; min-width: 0; }
+  .announce__name input { width: 100%; }
+}
 .announce__status { flex-basis: 100%; margin: 0; font-size: var(--step--1); font-weight: 600; text-align: center; }
 .announce__status:empty { display: none; }
 
@@ -642,6 +647,7 @@ html { scroll-behavior: smooth; }
 .signup p { color: inherit; }
 .signup__grid { display: grid; gap: var(--space-m); align-items: center; }
 .signup__form { display: grid; gap: var(--space-xs); }
+.signup .field { display: grid; gap: var(--space-3xs); }
 .signup label { font-weight: 600; }
 .signup input {
   width: 100%;
@@ -657,8 +663,8 @@ html { scroll-behavior: smooth; }
 
 @media (min-width: 48em) {
   .signup__grid { grid-template-columns: 1fr 1fr; gap: var(--space-2xl); }
-  .signup__form { grid-template-columns: 1fr auto; }
-  .signup__form label, .signup__status { grid-column: 1 / -1; }
+  .signup__form { grid-template-columns: 1fr 1fr auto; align-items: end; gap: var(--space-xs); }
+  .signup__status { grid-column: 1 / -1; }
 }
 
 /* 12. Footer ------------------------------------------------------------- */
