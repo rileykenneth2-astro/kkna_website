@@ -1,0 +1,16 @@
+{#- Interim notice about the gathering being planned. Shown on the home page,
+    where the events list replaces it once the calendar is connected, and on the
+    Events page above the calendar. Remove both includes once the gathering has
+    a date on the calendar.
+    Set noticeId before including to give it an id; set noticeCalendarLink to
+    add a link through to the calendar. -#}
+<div class="card card--tinted notice"{% if noticeId %} id="{{ noticeId }}"{% endif %}>
+  <h3>A neighborhood gathering is in the works</h3>
+  <p>We're planning a social gathering for neighbors, with more to follow. Sign up for email updates and you'll be the first to hear the date, time, and place.</p>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="#signup-form" data-jump-signup>Sign up for updates</a>
+    {%- if noticeCalendarLink %}
+    <a class="btn btn--secondary" href="/events/#calendar">See the calendar</a>
+    {%- endif %}
+  </div>
+</div>

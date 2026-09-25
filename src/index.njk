@@ -36,15 +36,10 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
     </div>
     {# Filled from the community Google Calendar once calendar.apiKey is set in _data/site.yml. #}
     <ol class="event-list" id="event-list" hidden></ol>
-    {# Shown until the calendar has events on it (see calendar.apiKey in _data/site.yml).
-       TODO: revisit this wording once the relaunch gathering has a date. #}
-    <div class="card card--tinted notice" id="events-fallback">
-      <h3>We're getting the association going again</h3>
-      <p>Neighbors are working to relaunch the Kennedy-King Neighborhood Association, and a social gathering is in the works. Sign up for email updates and you'll be the first to hear the date, time, and place.</p>
-      <div class="btn-row">
-        <a class="btn btn--primary" href="#signup-form" data-jump-signup>Sign up for updates</a>
-        <a class="btn btn--secondary" href="/events/#calendar">See the calendar</a>
-      </div>
+    {# Shown until the calendar has events on it (see calendar.apiKey in _data/site.yml). #}
+    {%- set noticeId = "events-fallback" %}
+    {%- set noticeCalendarLink = true %}
+    {% include "partials/gathering-notice.njk" %}
     </div>
   </div>
 </section>
