@@ -35,7 +35,7 @@ Search the code for `TODO` to find each spot.
 ## History page
 - [ ] The first video is a personal re-upload of the speech and could be taken down. An official channel's copy would be safer.
 - [ ] Population and household figures came from the old About page. Check them against current census data.
-- [ ] Replace the "More of our history" placeholder section, then delete the placeholder note.
+- [ ] "More of our history" now says the board is gathering it and invites stories. Replace with the real history once it's written.
 
 ## Copy to review (drafts)
 - [ ] Home: hero, get involved cards, history teaser, living here
