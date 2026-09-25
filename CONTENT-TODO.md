@@ -37,6 +37,9 @@ Search the code for `TODO` to find each spot.
 - [ ] Population and household figures came from the old About page. Check them against current census data.
 - [ ] "More of our history" now says the board is gathering it and invites stories. Replace with the real history once it's written.
 
+## Home page
+- [ ] The "Coming up" section carries a relaunch message inviting people onto the email list. Once the social gathering has a date, put it on the Google Calendar; with the API key in place the events list replaces this message automatically.
+
 ## Copy to review (drafts)
 - [ ] Home: hero, get involved cards, history teaser, living here
 - [ ] Get Involved: committee descriptions, volunteer roles, sponsor blurb, form dropdown choices
