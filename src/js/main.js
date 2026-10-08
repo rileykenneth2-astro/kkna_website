@@ -340,42 +340,86 @@
   });
 
   /* ---- Email signup (Mailchimp) ----------------------------------------- */
-  /* Runs for every form marked data-signup: the banner box and the band at
-     the foot of the page both use this. */
+  /* Runs for every form marked data-signup: the banner box and the band at the
+     foot of the page. The form's own action posts straight to Mailchimp when
+     JavaScript is off; here we submit in the background instead, so nobody
+     leaves the page. Mailchimp blocks ordinary cross-site requests, so this
+     goes through their script-callback endpoint. */
 
   var mailchimp = (cfg.mailchimp && cfg.mailchimp.formAction) || "";
+  var MC_CALLBACK = "KKNA_mailchimpReply";
+
+  // Their replies are meant for a browser, not for us: tags and a "0 - " prefix.
+  function tidy(message) {
+    return String(message || "")
+      .replace(/<[^>]*>/g, " ")
+      .replace(/^\s*\d+\s*-\s*/, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function mailchimpSubmit(form, status, done) {
+    var url = mailchimp.replace("/subscribe/post?", "/subscribe/post-json?");
+    var q = new URL(mailchimp).searchParams;
+    var fields = new URLSearchParams();
+    new FormData(form).forEach(function (value, key) { fields.append(key, value); });
+    if (q.get("u") && q.get("id")) fields.append("b_" + q.get("u") + "_" + q.get("id"), "");
+    fields.append("c", MC_CALLBACK);
+
+    var script = document.createElement("script");
+    var finished = false;
+
+    function finish(text) {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(timer);
+      delete window[MC_CALLBACK];
+      if (script.parentNode) script.parentNode.removeChild(script);
+      status.textContent = text;
+      done();
+    }
+
+    var timer = window.setTimeout(function () {
+      finish("That didn't go through. Please email " + (cfg.contactEmail || "us") + " and we'll add you.");
+    }, 10000);
+
+    window[MC_CALLBACK] = function (data) {
+      var message = tidy(data && data.msg);
+      if (data && data.result === "success") {
+        form.reset();
+        finish("You're on the list. Check your inbox to confirm.");
+      } else if (/already subscribed/i.test(message)) {
+        finish("You're already on the list.");
+      } else {
+        finish(message || "That didn't go through. Please check the address and try again.");
+      }
+    };
+
+    script.src = url + "&" + fields.toString();
+    script.onerror = function () {
+      finish("That didn't go through. Please email " + (cfg.contactEmail || "us") + " and we'll add you.");
+    };
+    document.head.appendChild(script);
+  }
 
   document.querySelectorAll("[data-signup]").forEach(function (form) {
     var status = form.parentElement.querySelector("[data-signup-status]") ||
                  form.querySelector("[data-signup-status]");
+    var button = form.querySelector('button[type="submit"]');
 
-    if (mailchimp) {
-      form.action = mailchimp;
-      form.method = "post";
-      form.target = "_blank";
-      // Mailchimp's spam trap field is named b_<u>_<id>, taken from the form URL.
-      var q = new URL(mailchimp).searchParams;
-      if (q.get("u") && q.get("id")) {
-        var trap = document.createElement("input");
-        trap.type = "text";
-        trap.name = "b_" + q.get("u") + "_" + q.get("id");
-        trap.tabIndex = -1;
-        trap.autocomplete = "off";
-        trap.className = "visually-hidden";
-        trap.setAttribute("aria-hidden", "true");
-        form.appendChild(trap);
-      }
-      form.addEventListener("submit", function () {
-        if (status) status.textContent = "Thanks! Check your inbox to confirm.";
-      });
-    } else {
-      form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
+      if (!mailchimp) {
         e.preventDefault();
         if (status) {
           status.textContent = "Email signup is almost ready. Until then, write to " +
             (cfg.contactEmail || "us") + " and we'll add you.";
         }
-      });
-    }
+        return;
+      }
+      e.preventDefault();
+      if (button) button.disabled = true;
+      if (status) status.textContent = "Signing you up…";
+      mailchimpSubmit(form, status, function () { if (button) button.disabled = false; });
+    });
   });
 })();

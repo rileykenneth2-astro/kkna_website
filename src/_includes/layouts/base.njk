@@ -6,6 +6,7 @@
   <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} | Indianapolis{% endif %}</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% if noindex %}<meta name="robots" content="noindex">{% endif %}
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">

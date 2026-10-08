@@ -34,7 +34,7 @@ forms:
 
 # Mailchimp embedded-form URL (Audience > Signup forms > Embedded forms).
 mailchimp:
-  formAction: ""          # TODO: paste once the board has Mailchimp access
+  formAction: https://kennedykingnbhd.us18.list-manage.com/subscribe/post?u=60b0acb843009f8f10b0812d8&id=cfa67b9c93&f_id=00a4b0e6f0
 
 # The home page banner. Raise this number when the message changes and
 # everyone, including people who dismissed the old one, should see it again.

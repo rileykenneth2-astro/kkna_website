@@ -7,14 +7,8 @@
   {%- if banner == "form" %}
   <div class="container announce__inner">
     <p class="announce__text">Sign up here to stay in the know for all things <span class="nowrap">Kennedy-King</span></p>
-    <form class="announce__form" id="banner-signup" data-signup>
-      {#- Hidden on phones, where the banner would otherwise take a fifth of the
-          screen. It still submits (empty), and the band at the foot of the page
-          asks for a name with room to spare. -#}
-      <span class="announce__name">
-        <label class="visually-hidden" for="banner-name">First name</label>
-        <input id="banner-name" name="FNAME" type="text" autocomplete="given-name" placeholder="First name">
-      </span>
+    <form class="announce__form" id="banner-signup" data-signup
+          action="{{ site.mailchimp.formAction }}" method="post" target="_blank">
       <label class="visually-hidden" for="banner-email">Email address</label>
       <input id="banner-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
       <button class="btn btn--light btn--small" type="submit">Sign up</button>
