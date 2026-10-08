@@ -41,6 +41,9 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
     {# Shown until the calendar has events on it (see calendar.apiKey in _data/site.yml). #}
     {%- set noticeId = "events-fallback" %}
     {%- set noticeCalendarLink = true %}
+    {#- The banner, the hero and the band at the foot of the page already ask
+        for an email; this one points at the calendar instead. -#}
+    {%- set noticeSignupButton = false %}
     {% include "partials/gathering-notice.njk" %}
     </div>
   </div>
@@ -56,9 +59,9 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
     </div>
     <div class="card-grid">
       <article class="card">
-        <h3>Stay in the know</h3>
-        <p>Neighborhood news, events, and what's happening on your block, straight to your inbox.</p>
-        <a class="more-link" href="#signup-form" data-jump-signup>Join the email list</a>
+        <h3>Know where you live</h3>
+        <p>The night of April 4, 1968, the Landmark for Peace, and how this neighborhood got its name.</p>
+        <a class="more-link" href="/history/">Read our history</a>
       </article>
       <article class="card">
         <h3>Join a committee</h3>

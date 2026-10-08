@@ -2,15 +2,20 @@
     where the events list replaces it once the calendar is connected, and on the
     Events page above the calendar. Remove both includes once the gathering has
     a date on the calendar.
-    Set noticeId before including to give it an id; set noticeCalendarLink to
-    add a link through to the calendar. -#}
+    Set noticeId to give it an id, noticeCalendarLink to link through to the
+    calendar, and noticeSignupButton to false where the page already asks for
+    an email elsewhere. -#}
 <div class="card card--tinted notice"{% if noticeId %} id="{{ noticeId }}"{% endif %}>
   <h3>A neighborhood gathering is in the works</h3>
   <p>We're planning a social gathering for neighbors, with more to follow. Sign up for email updates and you'll be the first to hear the date, time, and place.</p>
+  {%- if noticeSignupButton != false or noticeCalendarLink %}
   <div class="btn-row">
-    <a class="btn btn--primary" href="#signup-form" data-jump-signup>Sign up for updates</a>
+    {%- if noticeSignupButton != false %}
+    <a class="btn btn--secondary" href="#signup-form" data-jump-signup>Sign up for updates</a>
+    {%- endif %}
     {%- if noticeCalendarLink %}
     <a class="btn btn--secondary" href="/events/#calendar">See the calendar</a>
     {%- endif %}
   </div>
+  {%- endif %}
 </div>
