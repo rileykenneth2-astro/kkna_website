@@ -19,7 +19,6 @@
       <div class="field">
         <label for="f-topic">I'm interested in</label>
         <select id="f-topic" name="topic">
-          <option value="Coming to a meeting">Coming to a meeting</option>
           {%- for c in committees %}
           <option value="{{ c.name }} committee">{{ c.name }} committee</option>
           {%- endfor %}

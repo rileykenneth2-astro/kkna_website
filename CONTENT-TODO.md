@@ -1,7 +1,7 @@
 # Before launch: placeholders to replace
 
 Almost everything the board edits is in `src/_data/`:
-- `site.yml`: contact info, meeting details, calendar, Mailchimp, menu
+- `site.yml`: contact info, calendar, Mailchimp, menu, the meeting switch
 - `committees.yml`: committees on the Get Involved page
 - `past_events.yml`: past events and sponsors on the Events page
 - `resources.yml`: the Resources page
@@ -11,7 +11,7 @@ Almost everything the board edits is in `src/_data/`:
 Search the code for `TODO` to find each spot.
 
 ## Needs a board decision or access
-- [ ] **Add events to the Google Calendar** (board owns this). The calendar is public and embeds correctly, but has *no events scheduled* through Sep 2027, not even the monthly meetings. Add the last-Monday meeting as a repeating event, plus any upcoming gatherings.
+- [ ] **Add events to the Google Calendar** (board owns this). The calendar is public and embeds correctly, but has *no events scheduled* through Sep 2027. Add the gathering once it has a date, plus anything else coming up.
 - [ ] **Google Calendar API key** (Kenneth will add when he has it). Goes in `site.yml` (`calendar.apiKey`). It lets the home page list upcoming events. Until then, it shows the "last Monday" schedule and a link to the calendar.
 - [ ] **Web3Forms access key.** Sign up at web3forms.com with the association's email, then paste the key into `site.yml` (`forms.accessKey`). The endpoint is already set. It powers the Get Involved form and, later, the About page contact form. Until the key is in, the form tells people to email instead.
 - [x] **Mailchimp** is connected (`site.yml` → `mailchimp.formAction`). The audience is single opt-in, so people join the moment they submit and no confirmation email goes out.
@@ -45,5 +45,5 @@ Search the code for `TODO` to find each spot.
 ## Copy to review (drafts)
 - [ ] Home: hero, get involved cards, history teaser, living here
 - [ ] Get Involved: committee descriptions, volunteer roles, sponsor blurb, form dropdown choices
-- [ ] Events: "What to expect" at monthly meetings
+- [ ] Events: "What to expect" at meetings (hidden for now, shows again if meetings restart)
 - [ ] Neighborhood: the "Living here" paragraphs

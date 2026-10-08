@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
 title: Events
-description: Kennedy-King neighborhood meetings, block parties, clean-ups, and get-togethers, all on one community calendar.
+description: Kennedy-King block parties, clean-ups, and get-togethers, all on one community calendar.
 heading: Events
-lead: Neighborhood meetings, block parties, clean-ups, and get-togethers. Everything goes on the community calendar.
+lead: Block parties, clean-ups, and neighborhood get-togethers. Everything goes on the community calendar.
 ---
 {% from "partials/macros.njk" import ext %}
 {%- set calId = site.calendar.id | urlencode -%}
@@ -11,12 +11,12 @@ lead: Neighborhood meetings, block parties, clean-ups, and get-togethers. Everyt
 {%- set ics = "calendar.google.com/calendar/ical/" + calId + "/public/basic.ics" -%}
 
 <nav class="jump-links container" aria-label="On this page">
-  <a href="#meeting">Monthly meeting</a>
   <a href="#calendar">Calendar</a>
   <a href="#past-events">Past events</a>
 </nav>
 
-<section class="container meeting-wrap" id="meeting" aria-labelledby="meeting-title">
+{%- if site.meeting.scheduled %}
+<section class="container section-tight" id="meeting" aria-labelledby="meeting-title">
   {% include "partials/meeting-card.njk" %}
 
   {# TODO: confirm what a typical meeting covers. #}
@@ -29,6 +29,7 @@ lead: Neighborhood meetings, block parties, clean-ups, and get-togethers. Everyt
     </ul>
   </div>
 </section>
+{%- endif %}
 
 <section class="section section--alt" id="calendar" aria-labelledby="calendar-title">
   <div class="container">

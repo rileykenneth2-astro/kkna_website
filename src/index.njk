@@ -9,7 +9,7 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
   <div class="container hero__grid">
     <div>
       <h1 id="hero-title">A landmark neighborhood</h1>
-      <p class="lead">We're the neighbors between 16th and 22nd Streets, from Central Avenue to the Monon Trail, on Indianapolis's near north side. Come to a meeting, meet the people on your block, and help shape what comes next.</p>
+      <p class="lead">We're the neighbors between 16th and 22nd Streets, from Central Avenue to the Monon Trail, on Indianapolis's near north side. Meet the people on your block, and help shape what comes next.</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="/events/">See upcoming events</a>
         <a class="btn btn--secondary" href="/get-involved/">Get involved</a>
@@ -24,9 +24,11 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
   </div>
 </section>
 
-<section class="container meeting-wrap" aria-labelledby="meeting-title">
+{%- if site.meeting.scheduled %}
+<section class="container section-tight" aria-labelledby="meeting-title">
   {% include "partials/meeting-card.njk" %}
 </section>
+{%- endif %}
 
 <section class="section section--alt" aria-labelledby="events-title">
   <div class="container">
@@ -54,9 +56,9 @@ description: The Kennedy-King Neighborhood Association brings together neighbors
     </div>
     <div class="card-grid">
       <article class="card">
-        <h3>Come to a meeting</h3>
-        <p>Once a month, hear what's happening in the neighborhood, meet the board, and have your say.</p>
-        <a class="more-link" href="/events/">Meeting details</a>
+        <h3>Stay in the know</h3>
+        <p>Neighborhood news, events, and what's happening on your block, straight to your inbox.</p>
+        <a class="more-link" href="#signup-form" data-jump-signup>Join the email list</a>
       </article>
       <article class="card">
         <h3>Join a committee</h3>

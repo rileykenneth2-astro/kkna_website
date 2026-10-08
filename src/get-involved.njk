@@ -1,30 +1,31 @@
 ---
 layout: layouts/base.njk
 title: Get involved
-description: Come to a monthly meeting, join a committee, or volunteer at a Kennedy-King neighborhood event.
+description: Join a committee, volunteer at a neighborhood event, or sponsor one in Kennedy-King.
 heading: Get involved
 lead: The association is run entirely by neighbors who volunteer. Whether you have an hour a month or a weekend a year, there's a way to help.
 ---
 {# TODO: copy on this page is a draft for the board to review. #}
 
 <nav class="jump-links container" aria-label="On this page">
-  <a href="#meetings">Meetings</a>
   <a href="#committees">Committees</a>
   <a href="#volunteer">Volunteer</a>
   <a href="#sponsor">Sponsor</a>
 </nav>
 
-<section class="container meeting-wrap" id="meetings" aria-labelledby="meeting-title">
+{%- if site.meeting.scheduled %}
+<section class="container section-tight" id="meetings" aria-labelledby="meeting-title">
   <p class="section-intro"><strong>The easiest way to start:</strong> come to a monthly meeting. You'll hear what's going on, meet the board, and find out where help is needed most.</p>
   {% include "partials/meeting-card.njk" %}
 </section>
+{%- endif %}
 
 <section class="section section--alt" id="committees" aria-labelledby="committees-title">
   <div class="container">
     <div class="section-head">
       <div>
         <h2 id="committees-title">Join a committee</h2>
-        <p>Committees do most of the association's work between meetings. New members are welcome on all of them.</p>
+        <p>Committees do most of the association's work. New members are welcome on all of them.</p>
       </div>
     </div>
     {# Committees come from _data/committees.yml #}

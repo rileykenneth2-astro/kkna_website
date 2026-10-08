@@ -10,8 +10,11 @@ url: https://www.kennedykingnbhd.org
 email: kennedykingneighbors@gmail.com
 facebook: https://www.facebook.com/kennedykingnbhd
 
-# Monthly neighborhood meeting (home page card, Events page, footer).
+# Neighborhood meeting. No meetings are scheduled at the moment, so every
+# mention of them is hidden. Set scheduled to true to bring back the meeting
+# card on the home page, Events, Get involved and About, and the footer block.
 meeting:
+  scheduled: false
   schedule: Last Monday of each month
   rule: last-monday
   start: "18:30"          # 24-hour time

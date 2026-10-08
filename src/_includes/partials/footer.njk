@@ -6,11 +6,13 @@
         <img src="/images/logo-mark-white.png" alt="" width="317" height="447">
         <p><strong>{{ site.name }}</strong><br>{{ site.city }}</p>
       </div>
+      {%- if site.meeting.scheduled %}
       <div>
         <h2>Monthly meetings</h2>
         <p>{{ site.meeting.schedule }}<br>{{ site.meeting.start | timeRange(site.meeting.end) }}</p>
         <p>{{ site.meeting.place }}<br>{{ site.meeting.address }}</p>
       </div>
+      {%- endif %}
       <div>
         <h2>Contact</h2>
         <ul>

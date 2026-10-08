@@ -9,7 +9,7 @@ Almost everything the board changes lives in `src/_data/`, as plain text files:
 
 | File | What it controls |
 |---|---|
-| `site.yml` | Contact details, meeting time and place, calendar, signup, the menu, the banner version |
+| `site.yml` | Contact details, calendar, signup, the menu, the banner version, the meeting switch |
 | `board.yml` | Board members on the About page |
 | `committees.yml` | Committees on the Get Involved page |
 | `resources.yml` | The Resources page |
@@ -49,12 +49,17 @@ Cloudflare Pages builds the site on every push to `main`:
 ## How it's put together
 
 - `src/_includes/layouts/base.njk` — the page shell every page uses
-- `src/_includes/partials/` — header, footer, meeting card, signup band, contact form
+- `src/_includes/partials/` — header, footer, signup band, contact form, meeting card
 - `src/css/tokens.css` — colors, fonts and spacing, all in one place
 - `src/css/styles.css` — the rest of the styling, grouped by component
 - `src/js/main.js` — mobile menu, next-meeting date, calendar, forms
 - `src/js/site-config.njk` — passes settings from `site.yml` to the browser
 - `tools/make_logo_mark.py` — cuts the logo mark out of the JPEG, until a vector logo exists
 
-The site works without JavaScript: the menu stays open, the meeting schedule
-still shows, and forms explain how to reach the association by email.
+No meetings are scheduled at the moment, so every mention of them is hidden.
+Setting `meeting.scheduled` to `true` in `site.yml` brings back the meeting
+card on the home page, Events, Get involved and About, plus the footer block.
+
+The site works without JavaScript: the menu stays open, signups post straight
+to Mailchimp, and the contact form explains how to reach the association by
+email.

@@ -347,7 +347,7 @@ figcaption { margin-top: var(--space-2xs); font-size: var(--step--1); color: var
 
 /* 6. Meeting card -------------------------------------------------------- */
 
-.meeting-wrap { padding-bottom: var(--section); }
+.section-tight { padding-bottom: var(--section); }  /* section with no top padding */
 .section-intro { margin-bottom: var(--space-m); }
 .meeting-extra { margin-top: var(--space-l); }
 .meeting-extra h3 { font-size: var(--step-1); }
