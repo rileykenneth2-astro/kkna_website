@@ -387,7 +387,7 @@
       var message = tidy(data && data.msg);
       if (data && data.result === "success") {
         form.reset();
-        finish("You're on the list. Check your inbox to confirm.");
+        finish("You're on the list. Thanks for signing up!");
       } else if (/already subscribed/i.test(message)) {
         finish("You're already on the list.");
       } else {

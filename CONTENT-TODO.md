@@ -14,7 +14,9 @@ Search the code for `TODO` to find each spot.
 - [ ] **Add events to the Google Calendar** (board owns this). The calendar is public and embeds correctly, but has *no events scheduled* through Sep 2027, not even the monthly meetings. Add the last-Monday meeting as a repeating event, plus any upcoming gatherings.
 - [ ] **Google Calendar API key** (Kenneth will add when he has it). Goes in `site.yml` (`calendar.apiKey`). It lets the home page list upcoming events. Until then, it shows the "last Monday" schedule and a link to the calendar.
 - [ ] **Web3Forms access key.** Sign up at web3forms.com with the association's email, then paste the key into `site.yml` (`forms.accessKey`). The endpoint is already set. It powers the Get Involved form and, later, the About page contact form. Until the key is in, the form tells people to email instead.
-- [ ] **Mailchimp signup URL.** Goes in `site.yml` (`mailchimp.formAction`). Until then, the signup form tells people to email the association instead.
+- [x] **Mailchimp** is connected (`site.yml` → `mailchimp.formAction`). The audience is single opt-in, so people join the moment they submit and no confirmation email goes out.
+- [ ] **Point Mailchimp's post-signup page at `/subscribed/`** so the no-JavaScript path lands on the site rather than a Mailchimp page.
+- [ ] **Do one real signup** with your own address and check it lands in the audience.
 - [ ] **Current board list and committee chairs.** Chairs show "to be announced" (`committees.yml`).
 - [ ] **Vector logo** (SVG, AI, EPS or PDF). `src/images/logo-mark*.png` are cut from a 447px JPEG by `tools/make_logo_mark.py`.
 - [ ] **Twitter/X.** Only Facebook is linked until we know the account is active.
